@@ -1,0 +1,12 @@
+<h1>News</h1>
+<div class="clearfix"></div>
+<buttton ng-if="currentIndex !== 0" class="pull-left" ng-click="prevNews()">Previous</buttton>
+<buttton ng-if="currentIndex < news.length - 1" class="pull-right" ng-click="nextNews()">Next</buttton>
+<div class="clearfix"></div>
+<div class="news-item">
+	<h2>{{ news[currentIndex].dynamic.title }}</h2>
+	<div>
+		<img ng-src="{{ news[currentIndex].dynamic.urlToImage }}" alt="">
+		<p>{{ news[currentIndex].dynamic.description }}</p>
+	</div>
+</div>
