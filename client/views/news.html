@@ -1,12 +1,18 @@
 <h1>News</h1>
 <div class="clearfix"></div>
-<buttton ng-if="currentIndex !== 0" class="pull-left" ng-click="prevNews()">Previous</buttton>
-<buttton ng-if="currentIndex < news.length - 1" class="pull-right" ng-click="nextNews()">Next</buttton>
+<button ng-if="currentIndex !== 0" class="pull-left" ng-click="prevNews()">Previous</button>
+<button ng-if="currentIndex < news.length - 1" class="pull-right" ng-click="nextNews()">Next</button>
 <div class="clearfix"></div>
-<div class="news-item">
-	<h2>{{ news[currentIndex].dynamic.title }}</h2>
-	<div>
-		<img ng-src="{{ news[currentIndex].dynamic.urlToImage }}" alt="">
-		<p>{{ news[currentIndex].dynamic.description }}</p>
+<div class="news-wrap">
+	<div class="news-item swap-animation" ng-animate-swap="news[currentIndex]">
+		<h2>{{ news[currentIndex].dynamic.title }}</h2>
+		<div>
+			<div class="img-wrap pull-left">
+				<img ng-src="{{ news[currentIndex].dynamic.urlToImage }}" 
+					fallback-src="assets/not-found.png" alt="" >
+			</div>
+			<p>{{ news[currentIndex].dynamic.description }}</p>
+		</div>
 	</div>
 </div>
+<div class="clearfix"></div>
